@@ -1,21 +1,22 @@
 const express = require('express');
-const router = express.Router();
+const usersRouter = express.Router();
 
 const usersController = require('../controllers/usersController');
 
 // homepage
-router.get('/', usersController.homepage);
+usersRouter.get('/', usersController.homepage);
 
 // register
-router.get('/register', usersController.registerPage);
-router.post('/register', usersController.registerUser);
+usersRouter.get('/register', usersController.registerPage);
+usersRouter.post('/register', usersController.registerUser);
 
 // login
-router.get('/login', usersController.loginPage);
-router.post('/login', usersController.loginUser);
+usersRouter.get('/login', usersController.loginPage);
+usersRouter.post('/login', usersController.loginUser);
 
 // loged -> account
-router.get('/account', usersController.accountPage);
+usersRouter.get('/account', usersController.accountPage);
 
 
-module.exports = router;
+module.exports = usersRouter;
+// module.exports.routerx = router;

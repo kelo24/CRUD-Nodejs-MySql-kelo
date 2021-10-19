@@ -18,7 +18,6 @@ controller.registerPage = (req, res) => {
 controller.registerUser = (req, res) => {
     const newUser = req.body;
 
-    var idUserNull;
 
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO users SET ?', [newUser], (err, rows) => {
@@ -31,7 +30,7 @@ controller.registerUser = (req, res) => {
             if (id[0] == undefined) {
                 res.redirect('/login');
             } else {
-                idUserNull = id[0];
+                var idUserNull = id[0];
                 conn.query('DELETE FROM users WHERE id = ?', [idUserNull.id], (err, rows) => {
                     res.redirect('/register');
                 })

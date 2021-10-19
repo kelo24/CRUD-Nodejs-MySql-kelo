@@ -1,6 +1,7 @@
 # Carpets
 .vscode
 node_modules
+.gitignore
 
 # Files
 package-lock.json
